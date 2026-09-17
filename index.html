@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SportivAI — PR-FAQ Launch Announcement</title>
+  <style>
+    :root {
+      --bg:        #0c0f18;
+      --surface:   #141924;
+      --border:    #1f2d3d;
+      --accent:    #3b82f6;
+      --accent2:   #10b981;
+      --text:      #e2e8f0;
+      --muted:     #64748b;
+      --highlight: #1e3a5f;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: Georgia, 'Times New Roman', serif;
+      line-height: 1.75;
+      padding: 0;
+    }
+
+    /* ── Header ── */
+    header {
+      background: linear-gradient(135deg, #0f1f3d 0%, #0c1a0e 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 64px 24px 48px;
+      text-align: center;
+    }
+    header .eyebrow {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: 20px;
+    }
+    header h1 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: normal;
+      color: #f8fafc;
+      line-height: 1.2;
+      max-width: 820px;
+      margin: 0 auto 20px;
+    }
+    header .deck {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: #94a3b8;
+      max-width: 640px;
+      margin: 0 auto 32px;
+      font-style: italic;
+    }
+    header .dateline {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 0.8rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Layout ── */
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    /* ── Sections ── */
+    section {
+      margin-top: 56px;
+    }
+    section h2 {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 24px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    p {
+      margin-bottom: 1.4em;
+      color: #cbd5e1;
+    }
+    p:last-child { margin-bottom: 0; }
+
+    /* ── Pull quote ── */
+    blockquote {
+      margin: 32px 0;
+      padding: 24px 28px;
+      background: var(--surface);
+      border-left: 3px solid var(--accent2);
+      border-radius: 0 8px 8px 0;
+      font-style: italic;
+      color: #e2e8f0;
+      font-size: 1.05rem;
+    }
+    blockquote cite {
+      display: block;
+      margin-top: 12px;
+      font-style: normal;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 0.78rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── Feature list ── */
+    .features {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 28px 32px;
+      margin: 28px 0;
+    }
+    .features ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px 32px;
+    }
+    @media (max-width: 560px) {
+      .features ul { grid-template-columns: 1fr; }
+    }
+    .features ul li {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 0.88rem;
+      color: #94a3b8;
+      padding-left: 18px;
+      position: relative;
+    }
+    .features ul li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--accent2);
+    }
+    .features ul li strong {
+      display: block;
+      color: #e2e8f0;
+      font-size: 0.9rem;
+      margin-bottom: 2px;
+    }
+
+    /* ── FAQ ── */
+    .faq-item {
+      margin-bottom: 36px;
+    }
+    .faq-item h3 {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #f1f5f9;
+      margin-bottom: 10px;
+      padding-left: 16px;
+      border-left: 2px solid var(--accent);
+    }
+    .faq-item p {
+      padding-left: 16px;
+    }
+
+    /* ── CTA ── */
+    .cta {
+      margin-top: 56px;
+      padding: 40px;
+      background: linear-gradient(135deg, #0f1f3d 0%, #0c1a0e 100%);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      text-align: center;
+    }
+    .cta p {
+      font-size: 1.1rem;
+      color: #e2e8f0;
+      margin-bottom: 8px;
+    }
+    .cta .tagline {
+      font-size: 1.3rem;
+      font-style: italic;
+      color: #f8fafc;
+      margin-bottom: 24px;
+    }
+    .cta .links {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    .cta .links span { color: var(--accent2); }
+
+    /* ── Divider ── */
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 48px 0;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 0.75rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">Press Release · For Immediate Release</div>
+  <h1>SportivAI Launches First End-to-End Digital Platform for Niche Sports Associations</h1>
+  <p class="deck">Any sport. Any city. Any association. Running a professional-grade tournament operation in days, not years.</p>
+  <div class="dateline">SportivAI, Inc. &nbsp;·&nbsp; sportivai.com</div>
+</header>
+
+<div class="container">
+
+  <!-- ── Summary ── -->
+  <section>
+    <h2>Summary</h2>
+    <p>Sports associations that run on spreadsheets, group chats, and volunteer heroics now have an alternative. SportivAI today announced the public launch of its white-label tournament and community platform — a complete digital operations system purpose-built for small-to-mid-sized sports organizations that have never had access to the kind of software their athletes deserve.</p>
+    <p>The platform ships with everything a sports association needs to go fully digital: tournament creation and bracket generation, online registration with fee collection, live scoring, player rankings, a community content hub, pickup matchup tracking, and a donation portal — all under one roof, all configured to the association's own brand and domain in days.</p>
+    <p>The first live deployment is the United States Carrom Association (USCA), where the platform powers the full digital experience at uscarrom.org — from a player discovering an upcoming tournament, to registering, showing up on game day, having their scores tracked in real time, and seeing their national ranking update afterward.</p>
+  </section>
+
+  <!-- ── The Problem ── -->
+  <section>
+    <h2>The Problem</h2>
+    <p>Thousands of sports associations worldwide — governing bodies for carrom, kabaddi, sepak takraw, table shuffleboard, and hundreds of other sports that don't make SportsCenter — run entirely on the passion of unpaid volunteers. Their "tech stack" is a Facebook group, a WhatsApp thread, and a registration form built in Google Forms. Tournament brackets are drawn by hand or copied into Excel. Rankings are maintained in someone's personal spreadsheet. Scores are texted to an admin who updates a PDF.</p>
+    <p>These associations are not small because the sport is small. They are small because the cost and complexity of building a real digital platform has always been out of reach. Off-the-shelf tournament software built for mainstream sports doesn't fit. Custom software requires engineers, budgets, and maintenance capacity that volunteer organizations simply don't have.</p>
+    <p>The result: athletes in these communities never experience their sport as a serious, professionally-run competition. Associations can't grow their membership because they can't demonstrate legitimacy. The sport stagnates.</p>
+  </section>
+
+  <!-- ── The Solution ── -->
+  <section>
+    <h2>The Solution</h2>
+    <p>SportivAI is a multi-tenant Flutter web and mobile platform built on Firebase. A new association can be onboarded as a named tenant — with their own branding, domain, sport configuration, and feature set — without writing a single line of code. The same codebase that runs USCA's full carrom operation can be pointed at any sport, any organization.</p>
+    <p>What each association gets out of the box:</p>
+
+    <div class="features">
+      <ul>
+        <li>
+          <strong>Tournaments</strong>
+          Create with multiple formats (singles, doubles, team). Registration windows, waiting lists, early-bird pricing, bracket generation, live standings.
+        </li>
+        <li>
+          <strong>Live Scoring</strong>
+          Game-day control panel for admins. Real-time score entry with sport-specific fields. Players follow progress on their own devices.
+        </li>
+        <li>
+          <strong>Pickup Matchups</strong>
+          Ad-hoc game recording outside tournaments. Builds a year-round competitive record that feeds into rankings.
+        </li>
+        <li>
+          <strong>Player Rankings</strong>
+          Methodology-driven national ranking system. Draft → review → publish workflow. Talent showcases and CSV export.
+        </li>
+        <li>
+          <strong>Content Hub</strong>
+          Firebase Storage-backed CMS for blogs, news, sponsor spotlights, event pages, and policy documents. No CMS expertise required.
+        </li>
+        <li>
+          <strong>Donations</strong>
+          One-click PayPal donation portal with promo video, giving brief, and direct hosted-button integration.
+        </li>
+        <li>
+          <strong>Main Portal</strong>
+          Public landing site with video gallery, event highlights, calls to action, and deep links into every module.
+        </li>
+        <li>
+          <strong>Your Brand</strong>
+          Your domain, your logo, your colors. Players never see "SportivAI" unless you want them to.
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── Built for the USCA ── -->
+  <section>
+    <h2>Built for the USCA. Ready for Any Sport.</h2>
+    <p>The USCA deployment is the platform's reference implementation — the fully-featured version that has gone through a real competitive season. It shows what SportivAI looks like at maturity: PayPal-integrated tournament registration, carrom-specific live score entry, national rankings with age-factor methodology, a world cup event page, and a donation campaign that has funded association operations.</p>
+    <p>New associations onboard through the generic SportivAI deployment — a lighter configuration where the tenant is loaded dynamically at runtime — and graduate to a dedicated deployment as their needs grow.</p>
+  </section>
+
+  <hr/>
+
+  <!-- ── Quotes ── -->
+  <blockquote>
+    "We built this because we live it. We're carrom players, carrom organizers, and we were the volunteers staying up until midnight updating tournament brackets in a spreadsheet while also trying to watch our own kids play. We knew exactly what needed to exist. We just had to build it."
+    <cite>— SportivAI Founders</cite>
+  </blockquote>
+
+  <blockquote>
+    "I used to find out my match result through a screenshot someone posted in a group chat three days later. Now I watch the score update live on my phone while I'm walking to the next table."
+    <cite>— USCA Player</cite>
+  </blockquote>
+
+  <hr/>
+
+  <!-- ── FAQ ── -->
+  <section>
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <h3>Who is this for?</h3>
+      <p>Governing bodies, regional associations, and club networks for any sport that isn't served by mainstream tournament software. The sweet spot is an association with 100–5,000 active members, at least one national or regional tournament per year, and a volunteer committee doing the work of a professional operations team. Carrom, kabaddi, carom billiards, table tennis clubs, martial arts federations — any sport where the community is real but the infrastructure isn't.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>What does "white-label" mean in practice?</h3>
+      <p>Your players see your name, your logo, your domain. They never see "SportivAI" unless you want them to. The platform is configured with your organization's tenant record — name, domain, sport, feature flags, media path, social links, contact email. Every screen, document, and hosted page reflects your brand. The USCA deployment is uscarrom.org. A hypothetical kabaddi federation deployment would be their domain.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Do we need engineers to run this?</h3>
+      <p>No. Once onboarded, day-to-day operations are handled through the admin interfaces built into the platform: creating tournaments, managing registrations, setting up rounds, entering scores, publishing rankings, uploading content. Technical setup — Firebase project, domain, initial configuration — requires a one-time onboarding with the SportivAI team.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>How is this different from Challonge, Sportlomo, or PlayMetrics?</h3>
+      <p>Those platforms are built around mainstream bracket sports. They assume your sport maps neatly onto their data model. SportivAI is built around configurable sport logic: formats, scoring rules, and ranking methodologies are all data-driven, not hardcoded. It also bundles the full community stack — content, donations, matchup history, rankings — rather than just the tournament bracket piece. And it deploys as a standalone branded product under your domain, not as a profile on a shared marketplace.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>What happens to our data if we leave?</h3>
+      <p>Your data lives in your own Firebase project. You own the project. SportivAI deploys into infrastructure you control. There is no data lock-in at the platform level.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Does it support mobile?</h3>
+      <p>Yes. The USCA deployment ships iOS and Android apps alongside the web experience. The SportivAI SaaS tier starts web-only and adds mobile as the association's needs grow.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>How does scoring work for sports other than carrom?</h3>
+      <p>The scoring data model is generalized — rounds, groups, matchups, scoreLines, and standings are sport-agnostic structures. Carrom-specific UI (board tracking, coin counts, queen indicator) is a presentation layer on top of that model. Other sports get a simpler score-entry interface against the same underlying data structures. Format-specific scoring rules and ranking point systems are configurable per tournament.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>What does a new association get on day one?</h3>
+      <p>A live web app at their domain, an admin account, a configured tenant, empty Firestore collections ready to fill, Firebase Storage organized for their media, and every module available: tournaments, matchups, rankings, content, donations, and the main portal. The association creates their first tournament the same day.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Is there AI in SportivAI?</h3>
+      <p>The name reflects the aspiration. The current platform is built on real-time data infrastructure that captures every match, score, player result, and ranking movement across a sport's entire competitive history. That dataset is the foundation for what comes next: performance prediction, seeding recommendations, anomaly detection in scoring, and natural language summaries of tournament results. The infrastructure is being built now. The intelligence layer follows.</p>
+    </div>
+
+  </section>
+
+  <!-- ── CTA ── -->
+  <div class="cta">
+    <p>Ready to bring your association into the digital age?</p>
+    <p class="tagline">Any sport. Any association. Day one.</p>
+    <div class="links">
+      Live demo: <span>uscarrom.org</span> &nbsp;·&nbsp; Platform: <span>sportivai.com</span>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  SportivAI, Inc. &nbsp;·&nbsp; For press inquiries: pavilion@sportivai.com &nbsp;·&nbsp; Reverse-engineered PR-FAQ · 2026
+</footer>
+
+</body>
+</html>
